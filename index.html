@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			createJsonp('http://localhost:5000/?callback=getData');
+
+			function createJsonp(url) {
+				const script = document.createElement('script');
+				script.src = url;
+				document.body.appendChild(script);
+			}
+			function getData(data) {
+				console.log(data)
+			}
+		</script>
+	</body>
+</html>
