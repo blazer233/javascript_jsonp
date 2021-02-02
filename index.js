@@ -25,17 +25,11 @@ http.createServer((req, res) => {
 })
 
 
-await new Promise(resolve => {
-      var totalHeight = 0;
-      var distance = 100;
-      var timer = setInterval(() => {
-        var scrollHeight = document.body.scrollHeight;
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        if (totalHeight >= scrollHeight) {
-          console.log(totalHeight >= scrollHeight);
-          clearInterval(timer);
-          resolve();
-        }
-      }, 10);
-    });
+var totalHeight = 0;
+    var distance = 100;
+    var timer = setInterval(() => {
+      var scrollHeight = document.body.scrollHeight;
+      window.scrollBy(0, distance);
+      totalHeight += distance;
+      totalHeight >= scrollHeight && clearInterval(timer);
+    }, 100);
